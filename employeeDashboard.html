@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <header>
+        <h1>LT Solutions</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#" id="dashboardLink">Dashboard Overview</a></li>
+                <li><a href="#" id="researchLink">Research</a></li>
+                <li><a href="#" id="projectsLink">Projects</a></li>
+                <li><a href="#" id="settingsLink">Settings</a></li>
+                <li><a href="#" id="permissionsLink">Permissions</a></li>
+                <li><a href="#" id="editContentLink">Edit Content</a></li>
+                <li><a href="#" id="profileLink">Profile</a></li>
+                <li><a href="#" id="notificationsLink">Notifications</a></li>
+                <li><a href="#" id="logoutLink">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <aside>
+            <ul>
+                <li><a href="#" id="dashboardOverview">Dashboard Overview</a></li>
+                <li><a href="#" id="research">Research</a></li>
+                <li><a href="#" id="projects">Projects</a></li>
+                <li><a href="#" id="settings">Settings</a></li>
+                <li><a href="#" id="permissions">Permissions</a></li>
+                <li><a href="#" id="editContent">Edit Content</a></li>
+            </ul>
+        </aside>
+        <main>
+            <div id="dashboardContent" class="content-section" style="display: none;">
+                <h2>Dashboard Overview</h2>
+                <!-- Additional dashboard content -->
+            </div>
+            <div id="researchContent" class="content-section" style="display: none;">
+                <h2>Research</h2>
+                <div id="researchItems">
+                    <div class="research-item" id="caseLaw">Case-Law</div>
+                    <div class="research-item" id="regulations">Regulations</div>
+                    <div class="research-item" id="directives">Directives</div>
+                    <div class="research-item" id="decisions">Decisions</div>
+                </div>
+            </div>
+            <div id="projectsContent" class="content-section" style="display: none;">
+                <h2>Projects</h2>
+                <!-- Additional projects content -->
+            </div>
+            <div id="settingsContent" class="content-section" style="display: none;">
+                <h2>Settings</h2>
+                <div id="profileSettings">
+                    <form>
+                        <label for="firstName">First Name:</label>
+                        <input type="text" id="firstName" name="firstName">
+                        <label for="lastName">Last Name:</label>
+                        <input type="text" id="lastName" name="lastName">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email">
+                        <label for="publicProfile">Public Profile:</label>
+                        <input type="checkbox" id="publicProfile" name="publicProfile">
+                        <button type="submit">Save</button>
+                    </form>
+                </div>
+            </div>
+            <div id="permissionsContent" class="content-section" style="display: none;">
+                <h2>Permissions</h2>
+                <label for="userEmail">Email:</label>
+                <input type="email" id="userEmail" name="userEmail">
+                <label for="userType">User Type:</label>
+                <select id="userType" name="userType">
+                    <option value="customer">Customer</option>
+                    <option value="employee">Employee</option>
+                    <option value="admin">Admin</option>
+                </select>
+                <button id="updateRoleButton">Update Role</button>
+            </div>
+            <div id="editContentContent" class="content-section" style="display: none;">
+                <h2>Edit Content</h2>
+                <div id="editSections">
+                    <div class="research-item" id="editCaseLaw">Case-Law</div>
+                    <div class="research-item" id="editRegulations">Regulations</div>
+                    <div class="research-item" id="editDirectives">Directives</div>
+                    <div class="research-item" id="editDecisions">Decisions</div>
+                </div>
+                <div id="editContentDetails" style="display: none;">
+                    <h3 id="selectedCategory"></h3>
+                    <button id="addFolderButton">Add Folder</button>
+                    <button id="addDocumentButton">Add Document</button>
+                    <div id="uploadForm" style="display: none;">
+                        <form enctype="multipart/form-data">
+                            <input type="file" id="documentUpload" name="document">
+                            <button type="submit">Upload</button>
+                        </form>
+                    </div>
+                    <div id="case-law-content"></div>
+                    <div id="regulations-content"></div>
+                    <div id="directives-content"></div>
+                    <div id="decisions-content"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="employeeDashboard.js"></script>
+</body>
+</html>

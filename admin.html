@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <style>
+        .admin-panel { max-width: 800px; margin: auto; padding: 20px; }
+        .user-list { margin: 20px 0; }
+        .user-list ul { list-style: none; padding: 0; }
+        .user-list li { padding: 10px; border-bottom: 1px solid #ccc; display: flex; justify-content: space-between; }
+    </style>
+    <script>
+        async function fetchUsers() {
+            const response = await fetch('/admin/users', {
+                headers: {
+                    'Authorization': 'Bearer ' + localStorage.getItem('token')
+                }
+            });
+            const users = await response.json();
+            const userList = document.getElementById('userList');
+            userList.innerHTML = '';
+            users.forEach(user => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    ${user.firstName} ${user.lastName} - ${user.userType}
+                    <select onchange="changeUserType('${user._id}', this.value)">
+                        <option value="customer" ${user.userType === 'customer' ? 'selected' : ''}>Customer</option>
+                        <option value="employee" ${user.userType === 'employee' ? 'selected' : ''}>Employee</option>
+                    </select>
+                `;
+                userList.appendChild(li);
+            });
+        }
+
+        async function changeUserType(userId, userType) {
+            await fetch('/admin/users/' + userId, {
+                method: 'PUT',
+                headers: {
+                    'Authorization': 'Bearer ' + localStorage.getItem('token'),
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ userType })
+            });
+            fetchUsers();
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchUsers);
+    </script>
+</head>
+<body>
+    <div class="admin-panel">
+        <h1>Admin Panel</h1>
+        <div class="user-list">
+            <ul id="userList"></ul>
+        </div>
+    </div>
+</body>
+</html

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="shared.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>LT Solutions</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#" id="profileLink">Profile</a></li>
+                <li><a href="#" id="notificationsLink">Notifications</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <aside>
+            <ul>
+                <li><a href="#" id="dashboardOverviewLink">Dashboard Overview</a></li>
+                <li><a href="#" id="researchLink">Research</a></li>
+                <li><a href="#" id="projectsLink">Projects</a></li>
+                <li><a href="#" id="settingsLink">Settings</a></li>
+            </ul>
+        </aside>
+        <main>
+            <section id="dashboardOverview" class="content-section">
+                <h2>Dashboard Overview</h2>
+                <div id="recentProjects">
+                    <h3>Recent Projects</h3>
+                    <ul id="projectsList"></ul>
+                </div>
+            </section>
+            <section id="research" class="content-section" style="display:none;">
+                <h2>Research</h2>
+                <div id="researchSections">
+                    <div class="research-item" onclick="loadResearchSectionContent('Case-Law')">Case-Law</div>
+                    <div class="research-item" onclick="loadResearchSectionContent('Regulations')">Regulations</div>
+                    <div class="research-item" onclick="loadResearchSectionContent('Directives')">Directives</div>
+                    <div class="research-item" onclick="loadResearchSectionContent('Decisions')">Decisions</div>
+                </div>
+            </section>
+            <section id="settings" class="content-section" style="display:none;">
+                <h2>Settings</h2>
+                <div id="profileSettings">
+                    <h3>Profile</h3>
+                    <form id="profileForm" onsubmit="updateProfile(event)">
+                        <label for="firstName">First Name:</label>
+                        <input type="text" id="firstName" name="firstName">
+                        <label for="lastName">Last Name:</label>
+                        <input type="text" id="lastName" name="lastName">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email">
+                        <label for="isPublicProfile">Public Profile:</label>
+                        <input type="checkbox" id="isPublicProfile" name="isPublicProfile">
+                        <button type="submit">Save</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+    <div id="profileModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeProfileModal()">&times;</span>
+            <!-- Profile Modal Content -->
+        </div>
+    </div>
+    <div id="notificationsModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeNotificationsModal()">&times;</span>
+            <!-- Notifications Modal Content -->
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LT Solutions - Legal Technology Tools</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LT Solutions</div>
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="tagline">
+            Efficient, trusted, accurate
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>LT Solutions for Lawyers, Law Firms, and Students</h1>
+        <p>Your go-to resource for comprehensive EU Law research</p>
+        <div class="cta-buttons">
+            <a href="#pricing" class="btn-primary">Get Started</a>
+            <a href="#features" class="btn-secondary">Learn More</a>
+        </div>
+    </section>
+
+    <section id="features">
+        <h2>Our Features</h2>
+        <div class="features-container">
+            <div class="feature">
+                <h3>Comprehensive UI for EU Law</h3>
+                <p>Navigate different areas of EU law effortlessly with our intuitive interface.</p>
+            </div>
+            <div class="feature">
+                <h3>No-Implementation Needed</h3>
+                <p>Our web-based solution requires no setup or installation.</p>
+            </div>
+            <div class="feature">
+                <h3>Quality Summaries of EU Law</h3>
+                <p>Access high-quality summaries of all areas of EU law.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing">
+        <h2>Pricing</h2>
+        <div class="pricing-container">
+            <div class="pricing-plan">
+                <h3>Student Plan</h3>
+                <p>€0/month</p>
+                <p>With Student ID</p>
+                <a href="/signup.html" class="btn-primary">Sign Up</a>
+            </div>
+            <div class="pricing-plan">
+                <h3>Individual Plan</h3>
+                <p>€5.99/month</p>
+                <a href="/signup.html" class="btn-primary">Sign Up</a>
+            </div>
+            <div class="pricing-plan">
+                <h3>Enterprise Plan</h3>
+                <p>Contact us for a quote</p>
+                <a href="mailto:info@ltsolutions.com" class="btn-primary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="testimonials">
+        <h2>Testimonials</h2>
+        <div class="testimonials-container">
+            <div class="testimonial">
+                <p>"LT Solutions has been a game changer for our legal research. The summaries are concise and accurate."</p>
+                <p>- John Doe, Lawyer</p>
+            </div>
+            <div class="testimonial">
+                <p>"As a law student, this tool has helped me immensely in understanding EU law."</p>
+                <p>- Jane Smith, Law Student</p>
+            </div>
+            <div class="testimonial">
+                <p>"The no-implementation feature is fantastic. We were able to start using it immediately."</p>
+                <p>- Richard Roe, Law Firm Partner</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="newsletter">
+        <h2>Stay Updated</h2>
+        <form id="newsletter-form">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit" class="btn-primary">Subscribe</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms and Conditions</a>
+        </div>
+        <div class="social-media">
+            <a href="#" title="Instagram">Instagram</a>
+            <a href="#" title="Twitter">Twitter</a>
+        </div>
+        <div class="contact-info">
+            <p>Contact us at: <a href="mailto:info@ltsolutions.com">info@ltsolutions.com</a></p>
+        </div>
+    </footer>
+</body>
+</html>
